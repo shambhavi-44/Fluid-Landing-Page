@@ -1,0 +1,862 @@
+/* =========================================
+   CSS VARIABLES
+========================================= */
+
+:root {
+    --primary: #6c63ff;
+    --primary-dark: #554de8;
+    --primary-light: #ecebff;
+
+    --dark: #15162b;
+    --text: #303246;
+    --muted: #6f7185;
+
+    --background: #f8f9ff;
+    --surface: #ffffff;
+
+    --border: #e7e8f3;
+
+    --shadow:
+        0 20px 50px rgba(31, 35, 80, 0.10);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--dark);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(1rem, 2vw, 1.5rem)
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: clamp(1rem, 3vw, 3rem);
+}
+
+.logo {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: var(--muted);
+
+    font-size: clamp(0.8rem, 1vw, 0.95rem);
+
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* Navbar button */
+
+.nav-button {
+    text-decoration: none;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
+
+    padding:
+        clamp(0.65rem, 1vw, 0.8rem)
+        clamp(1rem, 1.8vw, 1.5rem);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.nav-button:hover {
+    background: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    width: min(1200px, 92%);
+
+    min-height: 80vh;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(3rem, 8vw, 8rem)
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(clamp(280px, 40vw, 500px), 1fr));
+
+    align-items: center;
+
+    gap: clamp(3rem, 7vw, 8rem);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+
+/* Small label */
+
+.hero-label {
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: clamp(0.65rem, 1vw, 0.8rem);
+
+    font-weight: 800;
+
+    letter-spacing: clamp(0.05rem, 0.2vw, 0.12rem);
+
+    padding:
+        clamp(0.45rem, 0.8vw, 0.6rem)
+        clamp(0.8rem, 1.5vw, 1rem);
+
+    border-radius: 999px;
+}
+
+
+/* =========================================
+   FLUID HEADING
+========================================= */
+
+.hero h1 {
+    font-size:
+        clamp(
+            2.8rem,
+            6vw,
+            6rem
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -0.04em;
+
+    max-width: 800px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   FLUID PARAGRAPH
+========================================= */
+
+.hero-description {
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1.4vw,
+            1.25rem
+        );
+
+    line-height: 1.7;
+
+    max-width: 620px;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: clamp(0.8rem, 1.5vw, 1.2rem);
+
+    margin-top: clamp(0.5rem, 1vw, 1rem);
+}
+
+
+/* Primary button */
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: clamp(0.4rem, 0.8vw, 0.7rem);
+
+    text-decoration: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size:
+        clamp(
+            0.85rem,
+            1vw,
+            1rem
+        );
+
+    font-weight: 700;
+
+    padding:
+        clamp(0.8rem, 1.2vw, 1rem)
+        clamp(1.2rem, 2vw, 2rem);
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(108, 99, 255, 0.25);
+}
+
+.primary-button span {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+
+/* Secondary button */
+
+.secondary-button {
+    text-decoration: none;
+
+    color: var(--text);
+
+    font-size:
+        clamp(
+            0.85rem,
+            1vw,
+            1rem
+        );
+
+    font-weight: 700;
+
+    padding:
+        clamp(0.8rem, 1.2vw, 1rem)
+        clamp(1rem, 1.8vw, 1.7rem);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--primary);
+}
+
+
+/* =========================================
+   HERO STATISTICS
+========================================= */
+
+.hero-stats {
+    width: 100%;
+
+    margin-top: clamp(1rem, 2vw, 2rem);
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: clamp(1.2rem, 3vw, 3rem);
+}
+
+.stat {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.stat strong {
+    font-size:
+        clamp(
+            1.1rem,
+            1.8vw,
+            1.5rem
+        );
+
+    color: var(--dark);
+}
+
+.stat span {
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            0.7rem,
+            1vw,
+            0.85rem
+        );
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height:
+        clamp(
+            350px,
+            45vw,
+            600px
+        );
+}
+
+
+/* Background glow */
+
+.visual-glow {
+    position: absolute;
+
+    width: clamp(250px, 35vw, 500px);
+
+    height: clamp(250px, 35vw, 500px);
+
+    background: var(--primary-light);
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   DASHBOARD CARD
+========================================= */
+
+.dashboard-card {
+    position: relative;
+
+    width: min(100%, 520px);
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    z-index: 2;
+
+    transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Dashboard header */
+
+.dashboard-header {
+    padding:
+        clamp(0.9rem, 1.5vw, 1.3rem)
+        clamp(1rem, 2vw, 1.7rem);
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.window-dots {
+    display: flex;
+
+    gap: 5px;
+}
+
+.window-dots span {
+    width: clamp(7px, 1vw, 10px);
+
+    height: clamp(7px, 1vw, 10px);
+
+    background: #d9dbea;
+
+    border-radius: 50%;
+}
+
+.dashboard-title {
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            0.7rem,
+            1vw,
+            0.85rem
+        );
+}
+
+
+/* Dashboard content */
+
+.dashboard-content {
+    padding:
+        clamp(1.3rem, 3vw, 2.5rem);
+}
+
+.mini-heading {
+    width: 55%;
+
+    height: clamp(15px, 2vw, 22px);
+
+    background: var(--dark);
+
+    border-radius: 5px;
+
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.mini-text {
+    width: 90%;
+
+    height: clamp(7px, 1vw, 10px);
+
+    background: #e8e9f2;
+
+    border-radius: 999px;
+
+    margin-bottom: 10px;
+}
+
+.mini-text.short {
+    width: 65%;
+}
+
+
+/* =========================================
+   CHART
+========================================= */
+
+.chart {
+    height:
+        clamp(
+            140px,
+            20vw,
+            220px
+        );
+
+    margin:
+        clamp(1.5rem, 3vw, 2.5rem)
+        0;
+
+    padding:
+        clamp(1rem, 2vw, 1.5rem);
+
+    background: #fafaff;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: clamp(0.4rem, 1vw, 1rem);
+}
+
+.chart span {
+    flex: 1;
+
+    background: var(--primary);
+
+    border-radius: 6px 6px 0 0;
+}
+
+.chart span:nth-child(1) {
+    height: 35%;
+}
+
+.chart span:nth-child(2) {
+    height: 55%;
+}
+
+.chart span:nth-child(3) {
+    height: 42%;
+}
+
+.chart span:nth-child(4) {
+    height: 75%;
+}
+
+.chart span:nth-child(5) {
+    height: 60%;
+}
+
+.chart span:nth-child(6) {
+    height: 90%;
+}
+
+
+/* =========================================
+   MINI CARDS
+========================================= */
+
+.mini-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+}
+
+.mini-cards div {
+    height:
+        clamp(
+            45px,
+            6vw,
+            70px
+        );
+
+    background: var(--primary-light);
+
+    border-radius: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+
+/* =========================================
+   FLOATING CARD
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    right: clamp(-1rem, -2vw, -2rem);
+
+    bottom: clamp(1rem, 4vw, 3rem);
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(0.6rem, 1vw, 0.9rem);
+
+    padding:
+        clamp(0.8rem, 1.5vw, 1rem);
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(31, 35, 80, 0.12);
+
+    transition: transform 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+}
+
+.floating-icon {
+    width: clamp(35px, 4vw, 45px);
+
+    height: clamp(35px, 4vw, 45px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 10px;
+
+    font-size:
+        clamp(
+            1rem,
+            1.5vw,
+            1.4rem
+        );
+}
+
+.floating-card strong {
+    display: block;
+
+    font-size:
+        clamp(
+            0.75rem,
+            1vw,
+            0.9rem
+        );
+}
+
+.floating-card span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            0.65rem,
+            0.8vw,
+            0.75rem
+        );
+}
+
+
+/* =========================================
+   FEATURES SECTION
+========================================= */
+
+.features {
+    width: min(1200px, 92%);
+
+    margin:
+        0
+        auto
+        clamp(3rem, 8vw, 7rem);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(clamp(220px, 25vw, 300px), 1fr)
+        );
+
+    gap: clamp(1rem, 2vw, 1.8rem);
+}
+
+.feature-card {
+    background: white;
+
+    padding:
+        clamp(1.5rem, 3vw, 2.5rem);
+
+    border: 1px solid var(--border);
+
+    border-radius:
+        clamp(
+            1rem,
+            2vw,
+            1.5rem
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+}
+
+.feature-number {
+    width: clamp(35px, 4vw, 48px);
+
+    height: clamp(35px, 4vw, 48px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 10px;
+
+    font-size:
+        clamp(
+            0.7rem,
+            1vw,
+            0.85rem
+        );
+
+    font-weight: 800;
+
+    margin-bottom:
+        clamp(
+            1rem,
+            2vw,
+            1.5rem
+        );
+}
+
+.feature-card h3 {
+    font-size:
+        clamp(
+            1.1rem,
+            1.8vw,
+            1.4rem
+        );
+
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            0.8rem,
+            1.1vw,
+            0.95rem
+        );
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SMALL SCREEN ADJUSTMENT
+========================================= */
+
+/*
+    clamp() handles most scaling.
+
+    This media query is only used where
+    a structural layout change is needed.
+*/
+
+@media (max-width: 650px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        width: min(1200px, 92%);
+    }
+
+    .floating-card {
+        right: 0;
+
+        bottom: 0;
+    }
+
+}
